@@ -16,4 +16,3 @@ def test_valor_negativo():
 def test_total():
     adicionar_gasto(20, "teste total")
     assert total_gastos() >= 20
-    
