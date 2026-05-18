@@ -9,7 +9,7 @@ from src.app import (
 )
 
 
-# ── Testes unitários existentes ────────────────────────────────────────────────
+# Testes unitários existentes
 
 def test_adicionar_gasto():
     adicionar_gasto(10, "teste")
@@ -27,7 +27,7 @@ def test_total():
     assert total_gastos() >= 20
 
 
-# ── Testes de integração (com mock da API) ─────────────────────────────────────
+# Testes de integração (com mock da API)
 
 RESPOSTA_API_MOCK = {
     "USDBRL": {
@@ -39,7 +39,7 @@ RESPOSTA_API_MOCK = {
 
 
 def test_buscar_cotacao_sucesso():
-    """Valida que buscar_cotacao retorna estrutura correta quando a API responde."""
+    """Valida que buscar_cotacao retorna estrutura correta."""
     mock_resp = MagicMock()
     mock_resp.status_code = 200
     mock_resp.json.return_value = RESPOSTA_API_MOCK
@@ -68,7 +68,7 @@ def test_buscar_cotacao_falha_de_rede():
 
 
 def test_buscar_cotacao_resposta_invalida():
-    """Valida que buscar_cotacao retorna None quando a API retorna dado inesperado."""
+    """Valida que retorna None quando a API retorna dado inesperado."""
     mock_resp = MagicMock()
     mock_resp.raise_for_status = MagicMock()
     mock_resp.json.return_value = {}  # chave ausente

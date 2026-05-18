@@ -44,7 +44,8 @@ def buscar_cotacao(moeda):
         moeda: código do par, ex: 'USD-BRL', 'EUR-BRL'
 
     Returns:
-        dict com 'nome', 'bid' (compra) e 'ask' (venda), ou None em caso de erro.
+        dict com 'nome', 'bid' (compra) e 'ask' (venda),
+        ou None em caso de erro.
     """
     try:
         resposta = requests.get(API_CAMBIO_URL.format(moeda), timeout=5)
